@@ -1,6 +1,6 @@
 # TucTacToe
 
-A professional-grade Tic-Tac-Toe application with a graphical user interface (GUI) and advanced Artificial Intelligence components. This project was developed as part of the **PLH 102 - Object-Oriented Programming** course at the **Technical University of Crete** (Spring 2021).
+A professional-grade Tic-Tac-Toe application with a graphical user interface (GUI) and advanced Artificial Intelligence components. This project was developed as part of the **PLH 102 - Object-Oriented Programming** course at the **Technical University of Crete** (Spring 2022).
 
 ## 📌 Overview
 TucTacToe is a Java-based application that implements the classic Tic-Tac-Toe game using the **Swing** library for its graphical interface. The project emphasizes proper software engineering practices, including the **Model-View-Controller (MVC)** architectural pattern, unit testing, and custom implementation of data structures and algorithms.
@@ -48,9 +48,6 @@ The codebase follows the **MVC** pattern to separate concerns:
 * **Language:** Java
 * **GUI Library:** Swing.
 * **Data Structures:** Custom implementations (lists, trees, maps) are used instead of standard Java Collections.
-
-## 🧪 Testing
-The project utilizes **Unit Tests** to ensure the correctness of the Domain Model and the Minimax algorithm logic.
 
 ---
 *Developed for the School of Electrical and Computer Engineering, Technical University of Crete.*

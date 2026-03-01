@@ -1,36 +1,56 @@
-# TucTacToe - Professional Tic-Tac-Toe with GUI & AI
+# TucTacToe
 
-A feature-rich Tic-Tac-Toe application developed in Java using the **Swing** library. This project was created as the second assignment for the **PLH 102 - Object-Oriented Programming** course at the **Technical University of Crete** (Spring 2021).
+A professional-grade Tic-Tac-Toe application with a graphical user interface (GUI) and advanced Artificial Intelligence components. This project was developed as part of the **PLH 102 - Object-Oriented Programming** course at the **Technical University of Crete** (Spring 2021).
 
-## 🎮 Project Overview
-[cite_start]TucTacToe is more than just a simple game; it is a complete software system implementing advanced AI algorithms, persistent data storage, and a dynamic Graphical User Interface (GUI) following the **Model-View-Controller (MVC)** architectural pattern[cite: 112, 117, 268].
+## 📌 Overview
+TucTacToe is a Java-based application that implements the classic Tic-Tac-Toe game using the **Swing** library for its graphical interface. The project emphasizes proper software engineering practices, including the **Model-View-Controller (MVC)** architectural pattern, unit testing, and custom implementation of data structures and algorithms.
 
-## 🚀 Key Features
-* [cite_start]**Multiple Game Modes:** * Human vs. Human[cite: 142].
-    * [cite_start]Human vs. Computer (AI)[cite: 143].
-    * [cite_start]Computer vs. Computer (AI Battle)[cite: 144].
-* **Advanced AI Opponents:**
-    * **Mr. [cite_start]Bean:** A casual AI that plays using random moves[cite: 170, 171].
-    * [cite_start]**Hal:** An unbeatable AI that uses a "Game Tree" and the **Minimax** algorithm (with optional Alpha-Beta pruning) to play perfectly[cite: 170, 172, 246, 265].
-* [cite_start]**Hall of Fame:** A persistent ranking system displaying the top 10 players based on a custom performance formula[cite: 154, 168].
-* [cite_start]**Persistent Statistics:** Saves player profiles, win/loss/tie ratios, and the 5 best/most recent games to a local file (`tuctactoe.ser`) using Java Serialization[cite: 146, 151, 156, 162].
+## 🚀 Features
 
+### Game Modes
+* **Player vs. Player:** Standard two-player mode.
+* **Player vs. Computer:** Challenge an AI opponent.
+* **Computer vs. Computer:** Watch two AI agents play against each other.
 
-## 🏗️ Technical Architecture (MVC)
-[cite_start]The project is strictly organized to ensure separation of concerns[cite: 268]:
-* [cite_start]**Model:** Handles game logic, the 3x3 board state (implemented as an immutable class), and data structures for player rosters[cite: 270, 293, 295].
-* [cite_start]**View:** A graphical interface built with Java Swing, featuring custom panels for the game board, the Hall of Fame, and player statistics [cite: 273, 355-357].
-* [cite_start]**Controller:** Manages user events (ECA rules) and governs the application's state transitions (NotReady, Ready, InPlay, GameOver)[cite: 276, 435, 455].
+### Artificial Intelligence
+The application includes distinct AI personalities:
+* **Mr. Bean:** A casual opponent that selects moves randomly.
+* **Hal:** A perfect player powered by a **Game Tree** and the **Minimax algorithm**, making it impossible to defeat.
 
+### Persistent Data & Statistics
+* **Player Profiles:** Stores player history including total games, wins, losses, and ties.
+* **Hall of Fame:** Displays the top 10 players based on a custom scoring formula.
+* **Data Persistence:** All player data and game history are serialized and saved locally to `tuctactoe.ser`.
 
-## 🛠️ Development & Best Practices
-* [cite_start]**Unit Testing:** The project includes extensive unit tests to verify the domain model and AI correctness[cite: 185, 485].
-* [cite_start]**Custom Framework:** All data structures (lists, trees, etc.) and algorithms (searching, sorting) are implemented from scratch rather than using built-in Java collections[cite: 141].
-* [cite_start]**Version Control:** Developed collaboratively using **Git** and GitHub[cite: 176, 178].
+### Advanced Scoring System
+Player performance is calculated using a weighted formula (0-100 scale):
 
-## 📊 Scoring Formula
-Player scores are calculated on a scale of 0 to 100 using the following logic:
-[cite_start]$$\sigma ko\rho=50\times\frac{2*wins+ties}{total\_games}$$ [cite: 154, 155]
+$$Score = 50 \times \frac{2 \times Wins + Ties}{Total Games}$$
+
+## 🏗️ Technical Architecture
+
+The codebase follows the **MVC** pattern to separate concerns:
+
+* **Model:**
+    * `Board`: Represents the game state (immutable design).
+    * `Player`: Manages user profiles and history (recent/best games).
+    * `GameRecord`: Archives finished game details.
+    * `PlayerRoster`: Handles player lookup and registration.
+* **View:**
+    * `MainWindow`: The primary application container.
+    * `GamePanel`: Renders the grid and player moves.
+    * `HallOfFame`: Displays high scores.
+* **Controller:**
+    * Implements **Event-Condition-Action (ECA)** rules to manage game flow.
+    * Manages state transitions (e.g., NotReady → Ready → InPlay → GameOver).
+
+## 🛠️ Requirements
+* **Language:** Java
+* **GUI Library:** Swing.
+* **Data Structures:** Custom implementations (lists, trees, maps) are used instead of standard Java Collections.
+
+## 🧪 Testing
+The project utilizes **Unit Tests** to ensure the correctness of the Domain Model and the Minimax algorithm logic.
 
 ---
-*Developed by the School of Electrical and Computer Engineering, Technical University of Crete.*
+*Developed for the School of Electrical and Computer Engineering, Technical University of Crete.*
